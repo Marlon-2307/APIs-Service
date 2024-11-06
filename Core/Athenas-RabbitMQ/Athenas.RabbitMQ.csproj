@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+  <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>Tuya.RabbitMQ</RootNamespace>
+    <Description>RabbitMQ Client Productor y Consumidor</Description>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>Tuya.SignalR.MessagePublisher</PackageId>
+    <RootNamespace>Tuya.SignalR.MessagePublisher</RootNamespace>
+    <UserSecretsId>aff4099e-73bb-4464-92df-61ec45228d74</UserSecretsId>
+    <Authors>Tuya Team</Authors>
+    <Version>1.1.0</Version>
+    <Company>Tuya</Company>
+    <Copyright>Tuya</Copyright>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="EventHandlers\**" />
+    <EmbeddedResource Remove="EventHandlers\**" />
+    <None Remove="EventHandlers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.ObjectPool" Version="6.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="7.0.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.5.0" />
+    <PackageReference Include="System.Net.Security" Version="4.3.2" />
+    <PackageReference Include="System.Net.WebSockets.Client" Version="4.3.2" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Athenas.EjemploTemplateApi.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Athenas.EjemploTemplateApi.WebApi.Controllers.CompaniesController">
+            <summary>
+            Version 1 Companies Controller
+            </summary>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Controllers.CompaniesController.#ctor(Athenas.EjemploTemplateApi.Application.Contracts.ICompanyService)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="companyService"></param>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Controllers.CompaniesController.CreateCompany(Athenas.EjemploTemplateApi.Application.DataTransferObjects.CompanyForCreationDto)">
+            <summary>
+            Creates a newly created company
+            </summary>
+            <param name="company"></param>
+            <returns>A newly created company</returns>
+            <response code="201">Returns the newly created item</response>
+            <response code="400">If the item is null</response>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Controllers.CompaniesController.GetCompanies">
+            <summary>
+            Gets the list of all companies
+            </summary>
+            <returns>The companies list</returns>
+            <response code="200">Returns the item</response>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Controllers.CompaniesController.GetCompany(System.Guid)">
+            <summary>
+            Gets the company for the Id
+            </summary>
+            <param name="id"></param>
+            <returns>A company</returns>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Controllers.CompaniesController.GetCommentsByCompanyID(System.Guid)">
+            <summary>
+            Gets Comments the company for the Id
+            </summary>
+            <param name="id"></param>
+            <returns>A company</returns>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Controllers.CompaniesController.GetCompaniesOptions">
+            <summary>
+            GET The options for de endpoint
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Athenas.EjemploTemplateApi.WebApi.Extensions.ErrorHandlerMiddleware">
+            <summary>
+            Controlador de errores
+            </summary>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Extensions.ErrorHandlerMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Constructor por defecto
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Extensions.ErrorHandlerMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext,Microsoft.Extensions.Logging.ILogger{Athenas.EjemploTemplateApi.WebApi.Extensions.ErrorHandlerMiddleware})">
+            <summary>
+            Pasa la solicitud al siguiente controlador
+            </summary>
+            <param name="context"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Athenas.EjemploTemplateApi.WebApi.Extensions.MongoRepositoryExtensions">
+            <summary>
+            Extension for Configuration to MongoDB with Athenas Mongo Repository
+            </summary>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Extensions.MongoRepositoryExtensions.ConfigureMongoRepository(Microsoft.Extensions.DependencyInjection.IServiceCollection,Athenas.EjemploTemplateApi.Application.Contracts.IServiceConfiguration)">
+            <summary>
+            Configuration to MongoDB, Collections and indices
+            </summary>
+        </member>
+        <member name="T:Athenas.EjemploTemplateApi.WebApi.Extensions.ServiceExtensions">
+            <summary>
+            Servicio para agregar inyeccion de dependencias de la capa de infraestructura
+            </summary>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Extensions.ServiceExtensions.AddInfraestructure(Microsoft.Extensions.DependencyInjection.IServiceCollection,Athenas.EjemploTemplateApi.Application.Contracts.IServiceConfiguration)">
+            <summary>
+            Configura la inyeccion de dependencias de la capa HttpClientWrapper
+            </summary>
+            <param name="services">Coleccion de servicios </param>
+            <param name="configuration">Propiedades de configuracion de la aplicacion</param>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Extensions.ServiceExtensions.AddSwaggerConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configuración Swagger
+            </summary>
+            <param name="services">Colleccion de servicios</param>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Extensions.ServiceExtensions.AddApiVersionConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configuracion del versionamiento del api
+            </summary>
+            <param name="services">Colleccion de servicios</param>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Extensions.ServiceExtensions.UseSwaggerMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+             swagger Middleware
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Extensions.ServiceExtensions.AddHealthCheck(Microsoft.Extensions.DependencyInjection.IServiceCollection,Athenas.EjemploTemplateApi.Application.Contracts.IServiceConfiguration)">
+            <summary>
+            Middleware for add Check to external components
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Extensions.ServiceExtensions.UseHealthChecksMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Extensions.ServiceExtensions.ConfigureAppConfiguration(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
+            <summary>
+            Configure connection to Azure App Configuration
+            </summary>
+            <param name="builder"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Athenas.EjemploTemplateApi.WebApi.Handler.CustomTraceTelemetryHandler">
+            <summary>
+            Manejador para la personalizacion de mensajes del registros de eventos de serilog
+            </summary>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Handler.CustomTraceTelemetryHandler.Convert(Serilog.Events.LogEvent,System.IFormatProvider)">
+            <summary>
+            Registro de mensajes personalizados
+            </summary>
+            <param name="logEvent">Evento</param>
+            <param name="formatProvider">formato</param>
+            <returns></returns>
+        </member>
+        <member name="T:Athenas.EjemploTemplateApi.WebApi.Helpers.SwaggerConfiguration">
+            <summary>
+            Valores de configuracion Swagger
+            </summary>
+        </member>
+        <member name="F:Athenas.EjemploTemplateApi.WebApi.Helpers.SwaggerConfiguration.EndpointDescription">
+            <summary>
+            Descripción que aparece en el menú desplegable del selector de documentos.
+            </summary>
+        </member>
+        <member name="F:Athenas.EjemploTemplateApi.WebApi.Helpers.SwaggerConfiguration.EndPointUrl">
+            <summary>
+            Url archivo oas
+            </summary>
+        </member>
+        <member name="F:Athenas.EjemploTemplateApi.WebApi.Helpers.SwaggerConfiguration.EndPointEnviromentUrl">
+            <summary>
+            Url archivo oas en desarrollo
+            </summary>
+        </member>
+        <member name="F:Athenas.EjemploTemplateApi.WebApi.Helpers.SwaggerConfiguration.DocInfoTitle">
+            <summary>
+            Titulo de la aplicación
+            </summary>
+        </member>
+        <member name="F:Athenas.EjemploTemplateApi.WebApi.Helpers.SwaggerConfiguration.DocInfoVersion">
+            <summary>
+            Versión del documento OpenApi
+            </summary>
+        </member>
+        <member name="F:Athenas.EjemploTemplateApi.WebApi.Helpers.SwaggerConfiguration.DocInfoDescription">
+            <summary>
+            Descripción corta de la aplicacion
+            </summary>
+        </member>
+        <member name="T:Athenas.EjemploTemplateApi.WebApi.ModelsResponse.CompanyResponse">
+            <summary>
+            Response for A Company
+            </summary>
+        </member>
+        <member name="T:Athenas.EjemploTemplateApi.WebApi.ModelsResponse.ListCommentsResponse">
+            <summary>
+            Response for A Company
+            </summary>
+        </member>
+        <member name="T:Athenas.EjemploTemplateApi.WebApi.ModelsResponse.ListCompanyResponse">
+            <summary>
+            Schema for list of companies
+            </summary>
+        </member>
+        <member name="T:Athenas.EjemploTemplateApi.WebApi.Settings.ServiceConfiguration">
+            <summary>
+            Configuration params for  the API
+            </summary>
+        </member>
+        <member name="P:Athenas.EjemploTemplateApi.WebApi.Settings.ServiceConfiguration.RabbitMqOptions">
+            <summary>
+            RabbitMQ Params for Publisher
+            </summary>
+        </member>
+        <member name="P:Athenas.EjemploTemplateApi.WebApi.Settings.ServiceConfiguration.KeyVaultConnectionString">
+            <summary>
+            Connection string to key vault
+            </summary>
+        </member>
+        <member name="P:Athenas.EjemploTemplateApi.WebApi.Settings.ServiceConfiguration.ApplicationInsightsInstrumentationKey">
+            <summary>
+            Instrumentation Key for telemtry to Application Insight
+            </summary>
+        </member>
+        <member name="P:Athenas.EjemploTemplateApi.WebApi.Settings.ServiceConfiguration.MongoDbConnectionString">
+            <summary>
+            Connection string to Mongo Database
+            </summary>
+        </member>
+        <member name="P:Athenas.EjemploTemplateApi.WebApi.Settings.ServiceConfiguration.UrlCommentsJsonPlaceHolder">
+            <summary>
+            Connection string to JsonPlaceHolder
+            </summary>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Settings.ServiceConfiguration.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configuration"></param>
+        </member>
+    </members>
+</doc>

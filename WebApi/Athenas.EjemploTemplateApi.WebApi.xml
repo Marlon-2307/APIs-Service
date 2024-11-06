@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Athenas.EjemploTemplateApi.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Athenas.EjemploTemplateApi.WebApi.Extensions.ErrorHandlerMiddleware">
+            <summary>
+            Controlador de errores
+            </summary>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Extensions.ErrorHandlerMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Constructor por defecto
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Extensions.ErrorHandlerMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext,Microsoft.Extensions.Logging.ILogger{Athenas.EjemploTemplateApi.WebApi.Extensions.ErrorHandlerMiddleware})">
+            <summary>
+            Pasa la solicitud al siguiente controlador
+            </summary>
+            <param name="context"></param>
+            <param name="logger"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Athenas.EjemploTemplateApi.WebApi.Extensions.ServiceExtensions">
+            <summary>
+            Servicio para agregar inyeccion de dependencias de la capa de infraestructura
+            </summary>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Extensions.ServiceExtensions.AddSwaggerConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configuración Swagger
+            </summary>
+            <param name="services">Colleccion de servicios</param>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Extensions.ServiceExtensions.UseSwaggerMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+             swagger Middleware
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:Athenas.EjemploTemplateApi.WebApi.Handler.InvalidModel">
+            <summary>
+            Class for dispatch standar response for Bad Request
+            </summary>
+        </member>
+        <member name="M:Athenas.EjemploTemplateApi.WebApi.Handler.InvalidModel.Response(FluentValidation.Results.ValidationResult)">
+            <summary>
+            Dispatch response for failed validation model
+            </summary>
+            <param name="context"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:Athenas.EjemploTemplateApi.Domain.Exceptions.BadRequestException"></exception>
+        </member>
+        <member name="T:Athenas.EjemploTemplateApi.WebApi.Helpers.SwaggerConfiguration">
+            <summary>
+            Valores de configuracion Swagger
+            </summary>
+        </member>
+        <member name="F:Athenas.EjemploTemplateApi.WebApi.Helpers.SwaggerConfiguration.EndpointDescription">
+            <summary>
+            Descripción que aparece en el menú desplegable del selector de documentos.
+            </summary>
+        </member>
+        <member name="F:Athenas.EjemploTemplateApi.WebApi.Helpers.SwaggerConfiguration.EndPointUrl">
+            <summary>
+            Url archivo oas
+            </summary>
+        </member>
+        <member name="F:Athenas.EjemploTemplateApi.WebApi.Helpers.SwaggerConfiguration.EndPointEnviromentUrl">
+            <summary>
+            Url archivo oas en desarrollo
+            </summary>
+        </member>
+        <member name="F:Athenas.EjemploTemplateApi.WebApi.Helpers.SwaggerConfiguration.DocInfoTitle">
+            <summary>
+            Titulo de la aplicación
+            </summary>
+        </member>
+        <member name="F:Athenas.EjemploTemplateApi.WebApi.Helpers.SwaggerConfiguration.DocInfoVersion">
+            <summary>
+            Versión del documento OpenApi
+            </summary>
+        </member>
+        <member name="F:Athenas.EjemploTemplateApi.WebApi.Helpers.SwaggerConfiguration.DocInfoDescription">
+            <summary>
+            Descripción corta de la aplicacion
+            </summary>
+        </member>
+    </members>
+</doc>

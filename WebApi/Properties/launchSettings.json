@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Athenas.EjemploTemplateApi.WebApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Localhost"
+      },
+      "applicationUrl": "https://localhost:53800/;http://localhost:53801/"
+    }
+  }
+}
